@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="register">Đăng ký</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <span class="navbar-brand" data-i18n="app_name">Travel Booking</span>
+        <button class="btn btn-light btn-sm ms-auto" id="themeBtn" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></button>
+        <select class="form-select form-select-sm ms-2" id="langSelect" onchange="changeLanguage(this.value)" style="width: 120px;">
+            <option value="vi">Tiếng Việt</option>
+            <option value="en">English</option>
+        </select>
+    </div> 
+</nav>
+
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="card shadow-lg p-5 col-md-5 col-lg-4 fade-in">
+        <h2 class="mb-4 text-center" data-i18n="register">Đăng ký</h2>
+        
+        <div class="form-group mb-3">
+            <label data-i18n="name">Tên</label>
+            <input id="regName" class="form-control" placeholder="Họ và tên" required>
+            <small class="text-danger d-none" id="nameError"></small>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label data-i18n="email">Email</label>
+            <input id="regEmail" class="form-control" placeholder="user@example.com" type="email" required>
+            <small class="text-danger d-none" id="emailError"></small>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label data-i18n="password">Mật khẩu</label>
+            <input id="regPassword" class="form-control" placeholder="••••••••" type="password" required>
+            <small class="text-danger d-none" id="passwordError"></small>
+        </div>
+        
+        <button class="btn btn-success w-100 mb-3" onclick="registerUser()" data-i18n="create_account">Tạo tài khoản</button>
+        
+        <p class="text-center">
+            <span data-i18n="have_account">Đã có tài khoản?</span> 
+            <a href="login.html" data-i18n="login_link">Đăng nhập</a>
+        </p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/api.js"></script>
+<script src="./assets/js/i18n.js"></script>
+<script src="./assets/js/auth.js"></script>
+</body>
+</html>
